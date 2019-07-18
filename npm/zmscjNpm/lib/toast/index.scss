@@ -1,0 +1,49 @@
+// Toast
+.zms-toastHide {
+  animation: coruscateBack 0.1s ease 0s 1 both !important;
+}
+.zms-toast {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  animation: coruscate 0.5s ease 0s 1 both;
+  text-align: center;
+  & > span {
+    flex: none;
+    max-width: 80%;
+    min-width: 30%;
+    margin: auto;
+    background: #353434;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+}
+@keyframes coruscate {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes coruscateBack {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
