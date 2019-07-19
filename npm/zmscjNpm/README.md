@@ -16,8 +16,7 @@ npm i babel-plugin-import -D
   "plugins": [
     ["import", {
       "libraryName": "zms-cj",
-      "libraryDirectory": "",
-      "style": true
+      "libraryDirectory": "lib"
     }]
   ]
 }
@@ -64,4 +63,16 @@ API
 | :--------: | :---------: | :----: |
 | loadingImg | loading图片 | string |
 |    text    |  提示文字   | string |
+
+## Toast
+
+轻提示（只支持一行文）
+
+|   参数   |        说明        | 类型 |
+| :------: | :----------------: | :--: |
+|   txt    |      txt: '',      | obj  |
+| duration | 显示时间，默认3000 | nub  |
+|          |                    |      |
+
+
 

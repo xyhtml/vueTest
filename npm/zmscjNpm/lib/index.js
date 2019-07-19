@@ -1,13 +1,10 @@
-// import { useSFC } from './utils/use'
 
-// import _Alert from './alert/index.vue'
-// var Alert = useSFC(_Alert)
-// import _Loading from './loading/index.vue'
-// var Loading = useSFC(_Loading)
-// import _LoadingMiddle from './loadingMiddle/index.vue'
-// var LoadingMiddle = useSFC(_LoadingMiddle)
+import Alert from './alert/index'
+import Loading from './loading/index'
+import LoadingMiddle from './loading-middle/index'
+import Toast from './toast/index'
 
-// var components = [_Alert, _Loading, _LoadingMiddle]
+// var components = [Alert, Loading, LoadingMiddle, Toast]
 // var install = function install (Vue) {
 //   components.forEach(function (Component) {
 //     Vue.use(Component);
@@ -19,5 +16,5 @@
 //   install(window.Vue);
 // }
 
-// export { install, Alert, Loading, LoadingMiddle }
+export { install, Alert, Loading, LoadingMiddle, Toast }
 // export default install
