@@ -1,0 +1,23 @@
+@import "./function.scss";
+@import "./var.scss";
+.Tit {
+  @include backAndBox;
+  & > h3 {
+    @include tit;
+    padding: 0 0 8px 0;
+  }
+  & > span {
+    font-size: 13px;
+    opacity: 0.5;
+  }
+}
+.pre {
+  @include pre;
+}
+.ts {
+  font-size: 15px;
+  opacity: 0.6;
+}
+.zms-keyword {
+  color: $green;
+}

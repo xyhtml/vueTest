@@ -20,7 +20,10 @@ npm i babel-plugin-import -D
     }]
   ]
 }
+
 ```
+
+ps: 不可全局引入（main.js引入无效）
 
 ## **zms-loading**
 
