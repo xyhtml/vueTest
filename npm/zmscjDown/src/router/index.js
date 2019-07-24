@@ -7,44 +7,43 @@ import Loading from '@/components/middle/Loading'
 import LoadingMiddle from '@/components/middle/LoadingMiddle'
 import Alert from '@/components/middle/Alert'
 import Toast from '@/components/middle/Toast'
-
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
+      name: 'index',
       component: Index,
       children: [
         {
-          path: '/Jj',
-          name: 'Jj',
+          path: '/jj',
+          name: 'jj',
           component: Jj
         },
         {
-          path: '/Yy',
-          name: 'Yy',
+          path: '/yy',
+          name: 'yy',
           component: Yy
         },
         {
-          path: '/Loading',
-          name: 'Loading',
+          path: '/loading',
+          name: 'loading',
           component: Loading
         },
         {
-          path: '/LoadingMiddle',
-          name: 'LoadingMiddle',
+          path: '/loadingMiddle',
+          name: 'loadingMiddle',
           component: LoadingMiddle
         },
         {
-          path: '/Alert',
-          name: 'Alert',
+          path: '/alert',
+          name: 'alert',
           component: Alert
         },
         {
-          path: '/Toast',
-          name: 'Toast',
+          path: '/toast',
+          name: 'toast',
           component: Toast
         }
       ]

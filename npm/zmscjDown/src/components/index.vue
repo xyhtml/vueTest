@@ -3,14 +3,14 @@
     <div class="left">
       <div class="leftUl">
         <h3 class="tit">开发指南</h3>
-        <div class="li" v-for="(item, index) in leftDataKFZN" :key="index" @click="leftClick(item, index)">
-          <router-link :class="{'current': item.name == routeName}" :to="{ name:item.name}">{{item.txt}}</router-link>
+        <div class="li" v-for="(item, index) in leftDataKFZN" :key="index">
+          <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
         </div>
       </div>
       <div class="leftUl">
         <h3 class="tit">组件</h3>
-        <div class="li" v-for="(item, index) in leftDataZJ" :key="index" @click="leftClick(item, index)">
-          <router-link :class="{'current': item.name == routeName}" :to="{ name:item.name}">{{item.txt}}</router-link>
+        <div class="li" v-for="(item, index) in leftDataZJ" :key="index">
+          <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
         </div>
       </div>
     </div>
@@ -34,46 +34,47 @@ export default {
   },
   data () {
     return {
-      routeName: 'Jj',
       leftDataKFZN: [
         {
           txt: '介绍',
-          name: 'Jj'
+          name: 'jj'
         },
         {
           txt: '使用',
-          name: 'Yy'
+          name: 'yy'
         }
       ],
       leftDataZJ: [
         {
           txt: 'Loading',
-          name: 'Loading'
+          name: 'loading'
         },
         {
           txt: 'LoadingMiddle',
-          name: 'LoadingMiddle'
+          name: 'loadingMiddle'
         },
         {
           txt: 'Alert',
-          name: 'Alert'
+          name: 'alert'
         },
         {
           txt: 'Toast',
-          name: 'Toast'
+          name: 'toast'
         }
       ]
     }
   },
   mounted () {
     this.$router.push({
-      name: 'Jj'
+      name: 'jj'
     })
   },
-  methods: {
-    leftClick (itme, index) {
-      this.routeName = this.$route.name
+  computed: {
+    routeNames: function () {
+      return this.$route.name
     }
+  },
+  methods: {
   }
 }
 </script>
@@ -98,11 +99,9 @@ export default {
     .leftUl {
       width: 100%;
       .tit {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         width: 100%;
         height: 50px;
+        line-height: 50px;
         font-weight: bold;
       }
       .current {
@@ -112,12 +111,12 @@ export default {
       }
       .li {
         width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         & > a {
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
           font-size: 15px;
+          display: block;
           &:hover {
             color: $green;
             cursor: pointer;
@@ -133,6 +132,7 @@ export default {
     flex: none;
     overflow: hidden;
     overflow-y: auto;
+    position: relative;
   }
   .right {
     flex: none;

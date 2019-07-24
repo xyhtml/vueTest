@@ -22,3 +22,13 @@
   color: $codeColor;
   font-family: Source Code Pro, Monaco, Inconsolata, monospace;
 }
+
+@mixin jt {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #888;
+  border-top: 1px solid #888;
+  transform: rotate(45deg);
+}
