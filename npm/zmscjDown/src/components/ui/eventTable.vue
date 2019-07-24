@@ -2,16 +2,14 @@
   <div class="apiTableBox">
     <table class="apiTable">
       <tr class="tit">
-        <td width="160">参数</td>
+        <td width="160">事件</td>
         <td width="300">说明</td>
-        <td width="160">类型</td>
-        <td>默认</td>
+        <td width="160">备注</td>
       </tr>
       <tr class="conTit" v-for="(item, index) in tabData" :key="index">
         <td>{{item.parame}}</td>
         <td>{{item.exp}}</td>
-        <td>{{item.type}}</td>
-        <td>{{item.default}}</td>
+        <td>{{item.ps}}</td>
       </tr>
     </table>
   </div>

@@ -18,16 +18,20 @@
       <router-view />
     </div>
     <div class="right">
-
+      <Mobile />
     </div>
   </div>
 </template>
 
 <script>
+import Mobile from './mobile/index'
 import { Alert } from 'zms-cj'
 import Vue from 'vue'
 Vue.use(Alert)
 export default {
+  components: {
+    Mobile
+  },
   data () {
     return {
       routeName: 'Jj',
@@ -89,6 +93,8 @@ export default {
     box-shadow: 0 2px 2px $boxShadowColor;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
     .leftUl {
       width: 100%;
       .tit {
@@ -121,19 +127,18 @@ export default {
     }
   }
   .middle {
-    width: 905px;
+    width: 920px;
     margin: 0 20px;
     box-sizing: border-box;
     flex: none;
     overflow: hidden;
+    overflow-y: auto;
   }
   .right {
     flex: none;
-    width: 375px;
-    padding: 20px;
+    width: 360px;
+    height: auto;
     box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 2px 2px $boxShadowColor;
   }
 }
 </style>

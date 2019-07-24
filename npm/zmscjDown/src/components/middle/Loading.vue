@@ -7,18 +7,18 @@
     <div class="Tit">
       <h3>引入</h3>
       <pre class="pre">
-      <span class="zms-keyword">import</span> { Loading } <span class="zms-keyword">from</span> 'zms-cj'
+      <span class="zms-keyword">import</span> { {{$route.name}} } <span class="zms-keyword">from</span> 'zms-cj'
       <code></code>
-      Vue.use(loading)</pre>
+      Vue.use({{$route.name}})</pre>
     </div>
     <div class="Tit">
       <h3>代码演示</h3>
       <pre class="pre">
       <span class="ts">// 基本示例</span>
-      <span class="zms-keyword">&lt;zms-loading /&gt;</span>
+      <span class="zms-keyword">&lt;zms-loading-middle /&gt;</span>
       <code></code>
       <span class="ts">// 自定义加载图片</span>
-      <span class="zms-keyword">&lt;zms-loading :loadingImg="图片地址" /&gt;</span></pre>
+      <span class="zms-keyword">&lt;zms-loading-middle :loadingImg="图片地址" /&gt;</span></pre>
     </div>
     <div class="Tit">
       <h3>Props</h3>
