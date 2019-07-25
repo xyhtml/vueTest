@@ -2,7 +2,7 @@
   <div class="Toast">
     <div class="Tit">
       <h3>{{$route.name}}</h3>
-      <span class="ts">轻提示（只支持一行文）</span>
+      <span class="ts">轻提示（只支持一行）</span>
     </div>
     <div class="Tit">
       <h3>引入</h3>
@@ -15,10 +15,13 @@
       <h3>代码演示</h3>
       <pre class="pre">
       <span class="ts">// 基本示例</span>
-      <span class="zms-keyword">&lt;zms-loading-middle /&gt;</span>
+      Toast('提示内容');
       <code></code>
-      <span class="ts">// 自定义加载图片</span>
-      <span class="zms-keyword">&lt;zms-loading-middle :loadingImg="图片地址" /&gt;</span></pre>
+      <span class="ts">// 自定义时间</span>
+      Toast({
+        <span class="zms-def">txt: '提示内容',</span>
+        <span class="zms-def">duration: 5000</span>
+      });</pre>
     </div>
     <div class="Tit">
       <h3>Event</h3>
@@ -38,12 +41,12 @@ export default {
         {
           parame: 'txt',
           exp: '提示内容',
-          ps: 'object'
+          ps: 'String'
         },
         {
           parame: 'duration',
-          exp: '显示时间，默认3000',
-          ps: 'number'
+          exp: '显示时间，默认3000ms',
+          ps: 'Nub'
         }
       ]
     }

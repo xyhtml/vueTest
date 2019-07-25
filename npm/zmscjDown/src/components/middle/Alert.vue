@@ -15,13 +15,16 @@
       <h3>代码演示</h3>
       <pre class="pre">
       <span class="ts">// 基本示例</span>
-      <span class="zms-keyword">&lt;zms-alert /&gt;</span>
+      &lt;zms-alert /&gt;
       <code></code>
-      <span class="ts">// 自定义标题</span>
-      <span class="zms-keyword">&lt;zms-alert :title="自定义标题" /&gt;</span>
+      <span class="ts">// 自定义内容</span>
+      &lt;zms-alert <span class="zms-keyword">title="自定义标题" textOne="自定义内容1" textTwo="自定义内容2"</span> /&gt;
+      <code></code>
+      <span class="ts">// 显示取消按钮</span>
+      &lt;zms-alert <span class="zms-keyword">cancelText="取消"</span> /&gt;
       <code></code>
       <span class="ts">// 事件调用</span>
-      <span class="zms-keyword">&lt;zms-alert @cancelClick="cancelClick" @sureClick="sureClick" /&gt;</span></pre>
+      &lt;zms-alert <span class="zms-keyword">@cancelClick="cancelClick" @sureClick="sureClick"</span> /&gt;</pre>
     </div>
     <div class="Tit">
       <h3>Props</h3>
@@ -66,13 +69,13 @@ export default {
           parame: 'cancelText',
           exp: '取消按钮文字',
           type: 'string',
-          default: '-'
+          default: '取消'
         },
         {
           parame: 'sureText',
           exp: '确定按钮文字',
           type: 'string',
-          default: '-'
+          default: '确定'
         }
       ],
       tabDataEvent: [
@@ -82,8 +85,8 @@ export default {
           ps: '-'
         },
         {
-          parame: 'title',
-          exp: '标题',
+          parame: 'sureClick',
+          exp: '确定事件',
           ps: '-'
         }
       ]

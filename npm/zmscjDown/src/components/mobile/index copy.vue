@@ -57,28 +57,26 @@ export default {
       ],
       TitLeftShow: false,
       currentView: '',
-      parentUrl: ''
+      mobUrl: parent.location.hash
     }
   },
   created () {
-    this.parentUrl = window.parent.location.href.split('#')[0] + '#/'
-  },
-  mounted () {
   },
   watch: {
+    mobUrl (val, oldVal) {
+      console.log(val, oldVal)
+    }
   },
   computed: {
     names: function () {
-      let name = this.$route.query.name
-      return this.isRouteName(name)
+      return this.isRouteName(this.$route.name)
     }
   },
   methods: {
     backFn () {
-      // this.$router.go(-1)
-      window.parent.location.href = this.parentUrl + 'jj'
+      this.$router.go(-1)
     },
-    isRouteName (name) {
+    isRouteName (name, url) {
       if (name === 'jj' || name === 'yy') {
         this.TitLeftShow = false
         this.currentView = ''
@@ -89,14 +87,9 @@ export default {
       return name
     },
     cjListFn (item) {
-      window.parent.location.href = this.parentUrl + item.name
-      this.isRouteName(item.name)
-      // window.parent.postMessage({
-      //   cmd: 'returnFormJson',
-      //   params: {
-      //     name: item.name
-      //   }
-      // }, '*')
+      this.$router.push({
+        name: item.name
+      })
     }
   }
 }
@@ -105,15 +98,11 @@ export default {
 <style lang="scss">
 @import "../../style/var.scss";
 @import "../../style/function.scss";
-#app {
-  height: auto;
-}
 .mobile {
   width: 100%;
   background: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 2px 3px $boxShadowColor;
-  overflow: hidden;
   ::-webkit-scrollbar {
     background-color: #fff;
   }

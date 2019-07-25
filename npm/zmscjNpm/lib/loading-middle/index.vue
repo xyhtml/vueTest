@@ -1,7 +1,7 @@
 <template>
   <div class="zms-loading-box-center">
     <div class="loading-component">
-      <img v-if="loadingImg != ''" :src="loadingImg" />
+      <img :src="loadingImg" v-if="loadingImg != ''" />
       <div class="svg" v-else>
         <svg viewBox="25 25 50 50" class="van-loading__circular">
           <circle cx="50" cy="50" r="20" fill="none"></circle>
@@ -67,7 +67,6 @@ export default {
   .svg {
     width: 50px;
     height: 50px;
-    padding: 25px;
     color: #d4d4d4;
     -webkit-animation: van-rotate 0.8s linear infinite;
     animation: van-rotate 0.8s linear infinite;

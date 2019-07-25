@@ -14,10 +14,8 @@ export default {
 @import "./style/rest.scss";
 @import "./style/com.scss";
 #app {
-  max-width: 1600px;
-  min-width: 1028px;
+  width: 100%;
   height: 100%;
-  margin: 0 auto;
   font-size: 16px;
 }
 </style>

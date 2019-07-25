@@ -17,7 +17,18 @@
 .ts {
   font-size: 15px;
   opacity: 0.6;
+  padding: 0 0 6px 0;
+  display: inline-block;
 }
 .zms-keyword {
   color: $green;
+  display: inline-block;
+}
+.zms-def {
+  color: $green;
+  padding: 8px 0;
+  display: inline-block;
+  &:last-child{
+    padding: 0 0 8px 0;
+  }
 }

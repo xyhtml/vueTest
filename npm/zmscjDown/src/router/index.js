@@ -7,6 +7,7 @@ import Loading from '@/components/middle/Loading'
 import LoadingMiddle from '@/components/middle/LoadingMiddle'
 import Alert from '@/components/middle/Alert'
 import Toast from '@/components/middle/Toast'
+import MobileIndex from '@/components/mobile/index'
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +48,10 @@ export default new Router({
           component: Toast
         }
       ]
+    },
+    {
+      path: '/MobileIndex',
+      component: MobileIndex
     }
   ]
 })

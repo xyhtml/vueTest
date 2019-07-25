@@ -1,16 +1,14 @@
   <template>
-  <div class="mob-loading">
+  <div class="mob-alert">
     <div class="con">
       <div class="btn" v-for="(item, index) in slData" :key="index" @click="jsFn(item, index)">{{item.txt}}</div>
     </div>
-    <zms-loading v-show="index == 0" />
-    <zms-loading v-show="index == 1" :loadingImg="img" />
   </div>
 </template>
 <script>
 import Vue from 'vue'
-import { Loading } from 'zms-cj'
-Vue.use(Loading)
+import { Toast } from 'zms-cj'
+Vue.use(Toast)
 export default {
   data () {
     return {
@@ -20,7 +18,7 @@ export default {
           txt: '基本示例'
         },
         {
-          txt: '加载图片'
+          txt: '自定义时间'
         }
       ],
       img: require('../../assets/loading.gif')
@@ -28,17 +26,26 @@ export default {
   },
   methods: {
     jsFn (item, index) {
-      this.index = index
-      setTimeout(() => {
-        this.index = 9999
-      }, 3000)
+      switch (index) {
+        case 0:
+          Toast(this.slData[0].txt)
+          break
+        case 1:
+          Toast({
+            txt: this.slData[1].txt,
+            duration: 5000
+          })
+          break
+        default:
+          break
+      }
     }
   }
 }
 </script>
 <style lang="scss">
 @import "../../style/function.scss";
-.mob-loading {
+.mob-alert {
   width: 100%;
   height: 100%;
   position: relative;

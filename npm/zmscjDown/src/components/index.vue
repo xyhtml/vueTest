@@ -2,7 +2,7 @@
   <div class="index">
     <div class="left">
       <div class="leftUl">
-        <h3 class="tit">开发指南</h3>
+        <h3 class="tit">开发指南{{this.$store.state.pathName}}</h3>
         <div class="li" v-for="(item, index) in leftDataKFZN" :key="index">
           <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
         </div>
@@ -18,19 +18,20 @@
       <router-view />
     </div>
     <div class="right">
-      <Mobile />
+      <!-- <MobileIndex /> -->
+      <iframe class="iframe" :src="iframeUrl" frameborder="0"></iframe>
     </div>
   </div>
 </template>
 
 <script>
-import Mobile from './mobile/index'
+import MobileIndex from '../components/mobile/index'
 import { Alert } from 'zms-cj'
 import Vue from 'vue'
 Vue.use(Alert)
 export default {
   components: {
-    Mobile
+    MobileIndex
   },
   data () {
     return {
@@ -61,20 +62,41 @@ export default {
           txt: 'Toast',
           name: 'toast'
         }
-      ]
+      ],
+      iframeUrl: '#/MobileIndex'
     }
   },
   mounted () {
     this.$router.push({
       name: 'jj'
     })
+    // window.addEventListener('message', this.handleMessage)
   },
   computed: {
     routeNames: function () {
-      return this.$route.name
+      let name = this.$route.name
+      return this.routeNamesFn(name)
     }
   },
   methods: {
+    routeNamesFn (name) {
+      // 像子ifarem传递参数
+      this.iframeUrl = '#/MobileIndex?name=' + name
+      return name
+    }
+    // 接受子页面iframe发来的信息
+    // handleMessage (event) {
+    //   var data = event.data
+    //   switch (data.cmd) {
+    //     case 'returnFormJson':
+    //       // 处理业务逻辑
+    //       console.log(data)
+    //       this.$router.push({
+    //         name: data.params.name
+    //       })
+    //       break
+    //   }
+    // }
   }
 }
 </script>
@@ -82,6 +104,9 @@ export default {
 @import "../style/var.scss";
 .index {
   width: 100%;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 1028px;
   height: 100%;
   padding: 10px 0;
   box-sizing: border-box;
@@ -139,6 +164,10 @@ export default {
     width: 360px;
     height: auto;
     box-sizing: border-box;
+    .iframe {
+      width: 100%;
+      height: 670px;
+    }
   }
 }
 </style>
