@@ -2,6 +2,10 @@ import './index.css'
 let objmr
 let show = true
 function Toast (obj) {
+  let mr = {
+    txt: '请输入提示文字',
+    duration: 3000
+  }
   if (!obj || typeof obj == 'function' || !show) {
     return
   }
@@ -11,15 +15,19 @@ function Toast (obj) {
       duration: 3000
     }
   } else if (typeof obj == 'object') {
-    objmr = {
-      txt: '小提示',
-      duration: 3000
-    }
-  } else {
-    objmr = {
+    let a = {
       txt: '',
       duration: 3000
     }
+    if (obj) {
+      obj.text ? a.txt = obj.text : a.txt = '请输入提示文字'
+      obj.duration ? a.duration = obj.duration : a.duration = 3000
+    } else {
+      objmr = mr
+    }
+    objmr = a
+  } else {
+    objmr = mr
   }
   show = false
   var a = document.createElement('div')

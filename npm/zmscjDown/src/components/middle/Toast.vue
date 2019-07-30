@@ -19,7 +19,7 @@
       <code></code>
       <span class="ts">// 自定义时间</span>
       Toast({
-        <span class="zms-def">txt: '提示内容',</span>
+        <span class="zms-def">text: '提示内容',</span>
         <span class="zms-def">duration: 5000</span>
       });</pre>
     </div>
@@ -39,7 +39,7 @@ export default {
     return {
       tabDataEvent: [
         {
-          parame: 'txt',
+          parame: 'text',
           exp: '提示内容',
           ps: 'String'
         },

@@ -64,6 +64,7 @@ export default {
     this.parentUrl = window.parent.location.href.split('#')[0] + '#/'
   },
   mounted () {
+    document.getElementsByTagName('body')[0].className = 'mobileBody'
   },
   watch: {
   },
@@ -105,9 +106,6 @@ export default {
 <style lang="scss">
 @import "../../style/var.scss";
 @import "../../style/function.scss";
-#app {
-  height: auto;
-}
 .mobile {
   width: 100%;
   background: #f7f7f7;

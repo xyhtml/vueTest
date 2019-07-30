@@ -1,16 +1,18 @@
 <template>
   <div class="index">
     <div class="left">
-      <div class="leftUl">
-        <h3 class="tit">开发指南{{this.$store.state.pathName}}</h3>
-        <div class="li" v-for="(item, index) in leftDataKFZN" :key="index">
-          <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
+      <div class="leftBox">
+        <div class="leftUl">
+          <h3 class="tit">开发指南{{this.$store.state.pathName}}</h3>
+          <div class="li" v-for="(item, index) in leftDataKFZN" :key="index">
+            <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
+          </div>
         </div>
-      </div>
-      <div class="leftUl">
-        <h3 class="tit">组件</h3>
-        <div class="li" v-for="(item, index) in leftDataZJ" :key="index">
-          <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
+        <div class="leftUl">
+          <h3 class="tit">组件</h3>
+          <div class="li" v-for="(item, index) in leftDataZJ" :key="index">
+            <router-link :class="{'current': item.name == routeNames}" :to="{ name:item.name}">{{item.txt}}</router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -104,6 +106,7 @@ export default {
 @import "../style/var.scss";
 .index {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   max-width: 1600px;
   min-width: 1028px;
@@ -111,16 +114,20 @@ export default {
   padding: 10px 0;
   box-sizing: border-box;
   display: flex;
+  position: relative;
   .left {
     flex: none;
     width: 260px;
-    height: 100%;
-    background: #fff;
-    box-shadow: 0 2px 2px $boxShadowColor;
-    padding: 20px;
-    box-sizing: border-box;
     overflow: hidden;
     overflow-y: auto;
+    .leftBox {
+      width: 100%;
+      height: auto;
+      background: #fff;
+      box-shadow: 0 2px 2px $boxShadowColor;
+      padding: 20px;
+      box-sizing: border-box;
+    }
     .leftUl {
       width: 100%;
       .tit {

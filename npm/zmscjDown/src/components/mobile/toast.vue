@@ -32,7 +32,7 @@ export default {
           break
         case 1:
           Toast({
-            txt: this.slData[1].txt,
+            text: this.slData[1].txt,
             duration: 5000
           })
           break

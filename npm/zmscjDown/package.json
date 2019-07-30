@@ -18,7 +18,7 @@
     "vue-router": "^3.0.1",
     "vue-style-loader": "^3.1.2",
     "vuex": "^3.1.1",
-    "zms-cj": "^1.1.31"
+    "zms-cj": "^1.1.32"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
