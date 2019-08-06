@@ -15,20 +15,34 @@
       <h3>代码演示</h3>
       <pre class="pre">
       <span class="ts">// 基本示例</span>
-      &lt;zms-alert /&gt;
-      <code></code>
-      <span class="ts">// 自定义内容</span>
-      &lt;zms-alert <span class="zms-keyword">title="自定义标题" textOne="自定义内容1" textTwo="自定义内容2"</span> /&gt;
-      <code></code>
-      <span class="ts">// 显示取消按钮</span>
-      &lt;zms-alert <span class="zms-keyword">cancelText="取消"</span> /&gt;
-      <code></code>
+      &lt;zms-alert <span class="zms-keyword">:alertData="alertData"</span> /&gt;
+      <span class="zms-keyword">export default </span> {
+        data() {
+          <span class="zms-keyword">return </span> {
+            alertData: {
+              title: '温馨提示',
+              textOne: '提示内容1',
+              textTwo: '提示内容2',
+              cancelText: '取消',
+              sureText: '确定'
+            },
+            <span class="ts">// 不显示取消</span>
+            alertData: {
+              cancelText: '',
+            }
+          }
+        }
+      }
       <span class="ts">// 事件调用</span>
       &lt;zms-alert <span class="zms-keyword">@cancelClick="cancelClick" @sureClick="sureClick"</span> /&gt;</pre>
     </div>
     <div class="Tit">
       <h3>Props</h3>
       <ApiTable :tabData="tabData" />
+    </div>
+    <div class="Tit">
+      <h3>API</h3>
+      <ApiTable :tabData="ApiData" />
     </div>
     <div class="Tit">
       <h3>Event</h3>
@@ -48,22 +62,30 @@ export default {
     return {
       tabData: [
         {
+          parame: 'alertData',
+          exp: '传入数据',
+          type: 'Object',
+          default: '-'
+        }
+      ],
+      ApiData: [
+        {
           parame: 'title',
           exp: '标题',
           type: 'string',
-          default: '-'
+          default: '温馨提示'
         },
         {
           parame: 'textOne',
           exp: '提示内容1',
           type: 'string',
-          default: '-'
+          default: '提示内容1'
         },
         {
           parame: 'textTwo',
           exp: '提示内容2',
           type: 'string',
-          default: '-'
+          default: '提示内容2'
         },
         {
           parame: 'cancelText',

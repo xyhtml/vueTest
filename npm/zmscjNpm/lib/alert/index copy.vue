@@ -1,14 +1,14 @@
 <template>
   <div class="zms-alert-box-centerBox">
     <div class="alert-component">
-      <div class="alert-title" v-html="alertData.title ? alertData.title : '温馨提示'"></div>
+      <div class="alert-title" v-html="title"></div>
       <div class="alert-text">
-        <div class="alert-text-one" v-html="alertData.textOne ? alertData.textOne : '提示内容1'"></div>
-        <div v-if="alertData.textTwo && alertData.textTwo !=''" class="alert-text-two" v-html="alertData.textTwo ? alertData.textTwo: '提示内容2'"></div>
+        <div class="alert-text-one" v-html="textOne"></div>
+        <div v-if="textTwo !=''" class="alert-text-two" v-html="textTwo"></div>
       </div>
       <div class="alert-btn">
-        <div v-if="alertData.cancelText && alertData.cancelText != ''" @click='cancelClick' class="alert-btn-cancel">{{alertData.cancelText}}</div>
-        <div @click="sureClick" class="alert-btn-sure">{{alertData.sureText ? alertData.sureText : '确定'}}</div>
+        <div v-if="cancelText != ''" @click='cancelClick' class="alert-btn-cancel">{{cancelText}}</div>
+        <div @click="sureClick" class="alert-btn-sure">{{sureText}}</div>
       </div>
     </div>
   </div>
@@ -21,21 +21,28 @@ export default {
     }
   },
   props: {
-    alertData: {
-      type: Object,
-      default () {
-        return {
-          title: '温馨提示',
-          textOne: '提示内容1',
-          textTwo: '提示内容2',
-          cancelText: '取消',
-          sureText: '确定'
-        }
-      }
+    title: {
+      type: String,
+      default: '温馨提示'
+    },
+    textOne: {
+      type: String,
+      default: '文案1'
+    },
+    textTwo: {
+      type: String,
+      default: '文案2'
+    },
+    cancelText: {
+      type: String,
+      default: ''
+    },
+    sureText: {
+      type: String,
+      default: '确定'
     }
   },
-  created () {
-  },
+  created () { },
   mounted () {
   },
   watch: {},
@@ -130,7 +137,6 @@ export default {
         border-right: 1px solid #efefef;
         color: #666;
         font-size: 16px;
-        cursor:pointer;
       }
       .alert-btn-sure {
         flex: 1;
@@ -141,7 +147,6 @@ export default {
         box-sizing: border-box;
         font-size: 16px;
         color: #0aa6a8;
-        cursor:pointer;
       }
     }
   }

@@ -24,7 +24,7 @@
       });</pre>
     </div>
     <div class="Tit">
-      <h3>Event</h3>
+      <h3>API</h3>
       <EventTable :tabData="tabDataEvent" />
     </div>
   </div>

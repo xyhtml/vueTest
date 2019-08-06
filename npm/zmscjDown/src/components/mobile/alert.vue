@@ -3,9 +3,8 @@
     <div class="con">
       <div class="btn" v-for="(item, index) in slData" :key="index" @click="jsFn(item, index)">{{item.txt}}</div>
     </div>
-    <zms-alert v-show="index == 0" @sureClick="sureClick" />
-    <zms-alert v-show="index == 1" title="自定义标题" textOne="自定义内容1" textTwo="自定义内容2" @sureClick="sureClick" />
-    <zms-alert v-show="index == 2" title="自定义内容" cancelText="取消" @sureClick="sureClick" @cancelClick="sureClick" />
+    <zms-alert v-show="index == 0" :alertData="alertData" @sureClick="sureClick" @cancelClick="sureClick" />
+    <zms-alert v-show="index == 1" :alertData="alertDataTwo" @sureClick="sureClick" />
   </div>
 </template>
 <script>
@@ -16,15 +15,23 @@ export default {
   data () {
     return {
       index: 9999,
+      alertData: {
+        title: '温馨提示',
+        textOne: '提示内容1',
+        textTwo: '提示内容2',
+        cancelText: '取消',
+        sureText: '确定'
+      },
+      alertDataTwo: {
+        textOne: '不显示取消',
+        cancelText: ''
+      },
       slData: [
         {
           txt: '基本示例'
         },
         {
-          txt: '自定义内容'
-        },
-        {
-          txt: '显示取消按钮'
+          txt: '不显示取消'
         }
       ],
       img: require('../../assets/loading.gif')

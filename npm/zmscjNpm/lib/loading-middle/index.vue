@@ -30,9 +30,6 @@ export default {
   },
   created () { },
   mounted () {
-    this.$nextTick(() => {
-      this.px2rem = document.documentElement.clientWidth / 10
-    })
   },
   watch: {},
   methods: {}
