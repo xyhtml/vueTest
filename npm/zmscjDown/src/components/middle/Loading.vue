@@ -15,10 +15,10 @@
       <h3>代码演示</h3>
       <pre class="pre">
       <span class="ts">// 基本示例</span>
-      &lt;zms-loading-middle /&gt;
+      &lt;zms-loading /&gt;
       <code></code>
       <span class="ts">// 自定义加载图片</span>
-      &lt;zms-loading-middle <span class="zms-keyword">:loadingImg="图片地址"</span> /&gt;</pre>
+      &lt;zms-loading <span class="zms-keyword">:loadingImg="图片地址"</span> /&gt;</pre>
     </div>
     <div class="Tit">
       <h3>Props</h3>
