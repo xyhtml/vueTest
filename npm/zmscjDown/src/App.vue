@@ -6,7 +6,22 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      screenWidth: document.body.clientWidth
+    }
+  },
+  mounted () {
+    // const that = this
+    // window.onresize = () => {
+    //   return (() => {
+    //     window.screenWidth = document.body.clientWidth
+    //     that.screenWidth = window.screenWidth
+    //     that.$store.state.windowWidth = that.screenWidth
+    //   })()
+    // }
+  }
 }
 </script>
 
