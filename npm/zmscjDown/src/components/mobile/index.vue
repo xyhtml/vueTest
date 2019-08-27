@@ -24,35 +24,35 @@
   </div>
 </template>
 <script>
-import loading from './loading'
-import loadingMiddle from './loadingMiddle'
-import alert from './alert'
-import toast from './toast'
+import Loading from './loading'
+import LoadingMiddle from './loadingMiddle'
+import Alert from './alert'
+import Toast from './toast'
 export default {
   components: {
-    loading,
-    loadingMiddle,
-    alert,
-    toast
+    Loading,
+    LoadingMiddle,
+    Alert,
+    Toast
   },
   data () {
     return {
       CjList: [
         {
           txt: 'Loading',
-          name: 'loading'
+          name: 'Loading'
         },
         {
           txt: 'LoadingMiddle',
-          name: 'loadingMiddle'
+          name: 'LoadingMiddle'
         },
         {
           txt: 'Alert',
-          name: 'alert'
+          name: 'Alert'
         },
         {
           txt: 'Toast',
-          name: 'toast'
+          name: 'Toast'
         }
       ],
       TitLeftShow: false,

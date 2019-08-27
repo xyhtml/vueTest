@@ -1,16 +1,17 @@
 <template>
   <div class="Alert">
-    <div class="Tit">
+    <MibbleTopTit :pageData="pageData"></MibbleTopTit>
+    <!-- <div class="Tit">
       <h3>{{$route.name}}</h3>
       <span class="ts">筑民生通用弹窗</span>
     </div>
     <div class="Tit">
       <h3>引入</h3>
       <pre class="pre">
-      <span class="zms-keyword">import</span> { {{$route.name}} } <span class="zms-keyword">from</span> 'zms-cj'
+      <span class="zms-keyword">import</span> { <b class="szmdx">{{$route.name}}</b> } <span class="zms-keyword">from</span> 'zms-cj'
       <code></code>
       Vue.use({{$route.name}})</pre>
-    </div>
+    </div> -->
     <div class="Tit">
       <h3>代码演示</h3>
       <pre class="pre">
@@ -53,13 +54,19 @@
 <script>
 import ApiTable from '../ui/apiTable'
 import EventTable from '../ui/eventTable'
+import MibbleTopTit from '../ui/mibble_top'
 export default {
   components: {
     ApiTable,
-    EventTable
+    EventTable,
+    MibbleTopTit
   },
   data () {
     return {
+      pageData: {
+        name: this.$route.name,
+        namePs: '筑民生通用弹窗'
+      },
       tabData: [
         {
           parame: 'alertData',

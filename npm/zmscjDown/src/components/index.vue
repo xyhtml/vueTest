@@ -50,19 +50,19 @@ export default {
       leftDataZJ: [
         {
           txt: 'Loading',
-          name: 'loading'
+          name: 'Loading'
         },
         {
           txt: 'LoadingMiddle',
-          name: 'loadingMiddle'
+          name: 'LoadingMiddle'
         },
         {
           txt: 'Alert',
-          name: 'alert'
+          name: 'Alert'
         },
         {
           txt: 'Toast',
-          name: 'toast'
+          name: 'Toast'
         }
       ],
       iframeUrl: '#/MobileIndex'

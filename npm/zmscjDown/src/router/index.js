@@ -3,10 +3,10 @@ import Router from 'vue-router'
 import Index from '@/components/index'
 import Jj from '@/components/middle/Jj'
 import Yy from '@/components/middle/Yy'
-import Loading from '@/components/middle/Loading'
-import LoadingMiddle from '@/components/middle/LoadingMiddle'
-import Alert from '@/components/middle/Alert'
-import Toast from '@/components/middle/Toast'
+import LoadingVue from '@/components/middle/Loading'
+import LoadingMiddleVue from '@/components/middle/LoadingMiddle'
+import AlertVue from '@/components/middle/Alert'
+import ToastVue from '@/components/middle/Toast'
 import MobileIndex from '@/components/mobile/index'
 Vue.use(Router)
 
@@ -28,24 +28,24 @@ export default new Router({
           component: Yy
         },
         {
-          path: '/loading',
-          name: 'loading',
-          component: Loading
+          path: '/Loading',
+          name: 'Loading',
+          component: LoadingVue
         },
         {
-          path: '/loadingMiddle',
-          name: 'loadingMiddle',
-          component: LoadingMiddle
+          path: '/LoadingMiddle',
+          name: 'LoadingMiddle',
+          component: LoadingMiddleVue
         },
         {
-          path: '/alert',
-          name: 'alert',
-          component: Alert
+          path: '/Alert',
+          name: 'Alert',
+          component: AlertVue
         },
         {
-          path: '/toast',
-          name: 'toast',
-          component: Toast
+          path: '/Toast',
+          name: 'Toast',
+          component: ToastVue
         }
       ]
     },

@@ -28,10 +28,13 @@
   color: $green;
   padding: 8px 0;
   display: inline-block;
-  &:last-child{
+  &:last-child {
     padding: 0 0 8px 0;
   }
 }
-.mobileBody{
+.mobileBody {
   height: auto;
+}
+.szmdx {
+  text-transform: capitalize;
 }
