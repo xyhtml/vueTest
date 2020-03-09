@@ -1,5 +1,5 @@
 import Alert from './index.vue'
-let install = function install (Vue) {
+var install = function install (Vue) {
   /* istanbul ignore if */
   if (typeof window !== 'undefined' && window.Vue) {
     Vue = window.Vue

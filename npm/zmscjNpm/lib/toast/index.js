@@ -1,8 +1,8 @@
 import './index.css'
-let objmr
-let show = true
+var objmr
+var show = true
 function Toast (obj) {
-  let mr = {
+  var mr = {
     txt: '请输入提示文字',
     duration: 3000
   }
@@ -15,7 +15,7 @@ function Toast (obj) {
       duration: 3000
     }
   } else if (typeof obj == 'object') {
-    let a = {
+    var a = {
       txt: '',
       duration: 3000
     }
@@ -37,9 +37,9 @@ function Toast (obj) {
   var c = document.createTextNode(objmr.txt)
   b.appendChild(c)
   document.body.appendChild(a)
-  setTimeout(() => {
+  setTimeout(function () {
     a.classList.add('zms-toastHide')
-    setTimeout(() => {
+    setTimeout(function () {
       document.body.removeChild(a)
       show = true
     }, 600)
